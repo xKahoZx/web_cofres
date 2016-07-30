@@ -1,0 +1,48 @@
+{%extends 'base.html' %}
+
+{% block title %}
+	{%if ban == "Activo" %}
+		Lista de items activos
+	{% else %}
+		Lista de items inactivos
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	{%if user.is_authenticated %}
+		{%if ban == "Activo" %}
+			<h5 class="titulo" align="center">Lista de items activos</h5>
+		{% else %}
+			<h5 class="titulo" align="center">Lista de items inactivos</h5>
+		{% endif %}
+		<div class="row">
+			<div class="col s12 m5">
+				<a href="/add/slider">Agregar item</a>
+			</div>
+			<div class="col s12 m5">
+				{% if ban == "Activo" %}
+					<a href="/lista_slider/Inactivo">Listar items inactivos</a>
+				{% else %}
+					<a href="/lista_slider/Activo">Listar items Activos</a>
+				{% endif %}
+				
+			</div>
+		</div>
+		<div class="row">
+			{% for p in sliders %}
+				<div class="col s12 m4">
+					<h6>{{p.Nombre}}</h6>
+					<img src="/media/{{p.Imagen}}" class="img_lista_slider">
+					<a href="/edit/slider/{{p.id}}">Editar</a>
+					{% if ban == "Activo" %}
+						<a href="/desactivar/slider/{{p.id}}">Desactivar</a>
+					{% else %}
+						<a href="/activar/slider/{{p.id}}">activar</a>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	{% else %}
+		<h5 class="titulo" align="center">Debes estar autenticado para poder ver el contenido</h5>
+	{% endif %}
+{% endblock %}

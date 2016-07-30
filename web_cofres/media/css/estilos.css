@@ -1,0 +1,68 @@
+.img{
+	padding-bottom: 2%;
+	
+}
+.body{
+  background-color: #378048;
+}
+
+.img_lista_slider{
+  width: 100%;
+  height: 230px;
+}
+
+.slider_nombre{
+  padding-left: 5%;
+  padding-top: 5px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.slider_descripcion{
+  padding-left: 5%;
+  background-color: #378048;
+  border-color: #378048;
+  color: #fff;
+}
+.titulo{
+	
+	color: #378048;
+
+}
+
+.titulo_carousel{
+  color: #fff;
+  background-color: #378048;
+  padding: 2%;
+  font-size: 20px;
+}
+
+.titulo_tarjeta{
+  color: #fff;
+  background-color: #378048;
+}
+
+@media only screen and (max-width: 992px) {
+    .menu {
+       	display: none !important;
+
+    	}
+     
+	}
+.logo {
+    	height: 64px;       	
+       	width :104px;
+     
+	}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+    	vertical-align: center;
+    	height: 57px;       	
+       	width :94px;
+     
+	}
+
+  .contacto{
+    display: none;
+  }

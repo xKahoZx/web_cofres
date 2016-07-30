@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}
+	Cofres del quindio - Contacto
+{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<h4 align="center" class="titulo">Contactanos</h4>
+		<form class="col s12 m8" method="POST">	
+			{%csrf_token%}	
+			<div ><p>En el siguiente formulario puedes enviarnos tus comentarios y te responderemos en el menor tiempo posible. Muchas gracias por compartir con nosotros…</p></div>
+			{% for field in form %}
+				{% if field.name  = "name" %}
+					<div class="input-field col s12 ">
+						<i class="material-icons prefix">account_circle</i>
+						<input type="text" name="name" id="id_name">
+						<label for="id_name">Nombre</label>
+					</div>
+				{% endif %}
+				{% if field.name  = "email" %}
+					<div class="input-field col s12 ">
+						<i class="material-icons prefix">email</i>
+						<input type="text" name="email" id="id_email">
+						<label for="id_email" data-error="wrong" data-success="right">Correo</label>
+					</div>
+				{% endif %}
+				{% if field.name  = "phone" %}
+					<div class="input-field col s12 ">
+						<i class="material-icons prefix">phone</i>
+						<input  type="text" name="phone" id="id_phone" >
+						<label for="id_phone" data-error="wrong" data-success="right">Teléfono</label>
+					</div>
+				{% endif %}
+				{% if field.name  = "asunto" %}
+					<div class="input-field col s12 ">
+						<i class="material-icons prefix">subject</i>
+						<input  type="text" name="asunto" id="id_asunto" >
+						<label for="id_asunto">Asunto</label>
+					</div>
+				{% endif %}
+				{% if field.name  = "mensaje" %}
+					<div class="input-field col s12 ">			
+						<i class="material-icons prefix">comment</i>
+						<textarea class="materialize-textarea" id="id_mensaje"name = "mensaje"></textarea>
+						<label for="id_mensaje">Mensaje</label>
+					</div>
+				{% endif %}
+			{% endfor %}
+			<h6 align="center" class="titulo"><b>{{men}}</b></h6>
+			<br>
+			<div align="center">
+				<button class="btn waves-effect waves-light" type="submit" ><b>Enviar</b><i class="material-icons right">note_add</i></button>
+				<button class="btn waves-effect waves-light" type="reset" ><b>Limpiar</b><i class="material-icons right">loop</i></button>
+			</div>
+		</form>
+		<div class="col s12 m3 push-m1 contacto">
+			<div align="center"><img src="/media/images/logo.jpg" width="80%" class="responsive-img "></div>
+			<div>
+				<p><b class="titulo"><i class="material-icons left">contact_phone</i>Telefonos:</b></p>
+				<p>315 282 3456 - 316 825 7108</p>
+			</div>
+			<div>
+				<p class="titulo"><i class="material-icons left">textsms</i><b>Visitanos en </b><a href="https://www.facebook.com/cofres.quindio?fref=ts" target="_blank">Facebook</a></p>
+			</div>
+			<div>
+				<p><b class="titulo"><i class="material-icons left">room</i>Direccion:</b></p>
+				<p>Calle 32 No. 23-32 B/Popular</p>
+				<p>Armenia - Quindio</p>
+				<a href="https://www.google.com.co/maps/place/Calle+32,+Armenia,+Quind%C3%ADo/@4.5301666,-75.6841185,17z/data=!4m5!3m4!1s0x8e38f5bb156feb45:0xcd870769880595cd!8m2!3d4.5301411!4d-75.6838199" target="_blank">Ver Ubicacion</a>
+			</div>
+			<div>
+				<p><b class="titulo"><i class="material-icons left">mail</i>Correos</b></p>
+				<p>pacho-agudelo@hotmail.com</p>
+				<p>cofresdelquindio@gmail.com</p>
+				
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

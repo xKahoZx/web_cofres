@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Editar Carousel
+{% endblock %}
+
+{% block content %}
+	
+	<div class="row">
+		{% if user.is_authenticated %}
+			<form action="." method="POST" enctype = "multipart/form-data">
+				{%csrf_token%}
+				{{form.as_p}}
+				<div align="center">
+					<button class="btn waves-effect waves-light" type="submit" ><b>Guardar</b><i class="material-icons right">note_add</i></button>
+					<button class="btn waves-effect waves-light" type="reset" ><b>Limpiar</b><i class="material-icons right">loop</i></button>
+				</div>
+			</form>
+		{% else %}	
+			<h5 align="center" class="titulo">Debes estar autenticado para poder ver el contenido</h5>
+		{% endif %}
+
+	</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+	Iniciar sesion
+{% endblock %}
+
+{% block content %}
+	
+	<div class="row">
+		<div align="center">
+			<h3>Inicio de sesion</h3>
+			<form action="." method="POST" >  		
+				{% csrf_token %}
+				{{form.as_p}}
+				{% if men %}
+					{{men}}
+					<br>
+					<br>
+				{% endif %}
+				<button class="btn waves-effect waves-light" type="submit" ><b>Iniciar</b><i class="material-icons right">supervisor_account</i></button>		
+				<button class="btn waves-effect waves-light" type="reset" ><b>Limpiar</b><i class="material-icons right">loop</i></button>					
+				<br>
+				<br>
+			</form>
+		</div>
+	</div>
+{% endblock %}
