@@ -52,7 +52,7 @@ def add_slider_view(request):
 		if formulario.is_valid():
 			add = formulario.save(commit = False)
 			add.save()
-			return HttpResponseRedirect ('/lista_slider')
+			return HttpResponseRedirect ('/lista_slider/Activo')
 	else:
 		formulario = add_product_form()
 	ctx = {'form':formulario}
