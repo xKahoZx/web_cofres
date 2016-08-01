@@ -1,7 +1,7 @@
 # Django settings for web_cofres project.
 
-DEBUG = False
-#TEMPLATE_DEBUG = DEBUG
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 import os
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),

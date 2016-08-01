@@ -6,14 +6,18 @@
 
 {% block content %}
 	<br>
-	<div class="slider">
-		<ul class="slides"> 
-			{% for p in slider %}
-				<li>
-					<img src="/media/{{p.Imagen}}"> <!-- random image -->        
-				</li>
-			{% endfor %}
-		</ul>
+	<div class="row z-depth-1">
+		<div class="slider slider_res">
+			<ul class="slides"> 
+				{% for p in slider %}
+					<li>
+						<img src="/media/{{p.Imagen}}"> <!-- random image -->        
+						<span class="span">{{p.Nombre}}</span>
+					</li>
+				{% endfor %}
+			</ul>
+			
+		</div>
 		{% if user.is_authenticated %}
 			<a href="lista_slider/Activo">Listar items</a>
 		{% endif %}
@@ -42,32 +46,11 @@
 		    </div>
 		</div>
 	</div>
-	
-	<div class="row z-depth-2 menu">
-		<div class="col m4 ">
-	        <div class="center promo promo-example">
-				<br>
-				<i class="material-icons medium">email</i>
-				<p class="promo-caption">Contactanos </p>
-				<p class="light center">sif-app@sif.com</p>
-		    </div>
-		</div>
-			<br>
-		<div class="col m4 ">
-	        <div class="center promo promo-example">
-				<i class="material-icons medium">room</i>
-				<p class="promo-caption">Dirección </p>
-				<p class="light center">Carrea 5 Norte, Número 123A-12</p>
-			</div>
-		</div>
-				
-		<div class="col m4 ">
-		    <div class="center promo promo-example">
-				<i class="material-icons medium">phone</i>
-				<p class="promo-caption">Telefono</p>
-				<p class="light center">314 094-988</p>
-		    </div>
-		</div>
+	<div class="row z-depth-2">
+		<div class="parallax-container slider_res">
+	    	<div class="parallax"><img src="/media/images/IMG-20160719-WA0008.jpg"></div>
+	    </div>
 	</div>
+	
 	  
 {% endblock %}

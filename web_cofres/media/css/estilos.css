@@ -2,6 +2,21 @@
 	padding-bottom: 2%;
 	
 }
+
+
+.span{
+  
+  padding-top: 10px;
+  color: #378048;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  background-color: rgba(255,255,255, 0.7);
+  font-size: 30px;
+  top: 70%;  
+  position: absolute;
+}
+
 .body{
   background-color: #378048;
 }
@@ -47,7 +62,17 @@
        	display: none !important;
 
     	}
-     
+    .slider_res{
+      height: 340px !important;
+    }
+
+    .slider_res .slides{
+      height: 310px !important;
+    }
+    
+
+
+
 	}
 .logo {
     	height: 64px;       	
