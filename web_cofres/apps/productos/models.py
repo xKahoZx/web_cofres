@@ -5,7 +5,7 @@ from django.db import models
 class Slider(models.Model):
 
 	def url(self,filename):
-		ruta = "MultimediaData/Slider/%s"%(str(filename))
+		ruta = "MultimediaData/Slider/%s_%s"%(self.Nombre, str(filename))
 		return ruta
 	Nombre 		= models.CharField(max_length = 50)
 	Imagen		= models.ImageField(upload_to = url)
@@ -17,7 +17,7 @@ class Slider(models.Model):
 class Carousel(models.Model):
 
 	def url(self,filename):
-		ruta = "MultimediaData/Carrousel/%s"%(str(filename))
+		ruta = "MultimediaData/Carousel/%s_%s"%(self.Nombre, str(filename))
 		return ruta
 	Nombre 		= models.CharField(max_length = 50)
 	Imagen_1	= models.ImageField(upload_to = url)
@@ -35,7 +35,7 @@ class Carousel(models.Model):
 class Producto(models.Model):
 
 	def url(self,filename):
-		ruta = "MultimediaData/Producto/%s"%(str(filename))
+		ruta = "MultimediaData/Producto/%s_%s"%(self.Nombre, str(filename))
 		return ruta
 
 	Nombre 		= models.CharField(max_length = 50)

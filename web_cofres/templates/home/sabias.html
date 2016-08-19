@@ -16,7 +16,7 @@
 					<a class="carousel-item" ><img src="/media/{{p.Imagen_4}}"></a>
 					<a class="carousel-item" ><img src="/media/{{p.Imagen_5}}"></a>
 				</div>
-				<p>{{p.Descripcion}} <a href="/slider/{{p.id}} " target="_blank">Ver pantalla completa</a></p> 
+				<p>{{p.Descripcion}}</p> 
 				{% if user.is_authenticated %}
 					<a href="/edit/carousel/{{p.id}}">Editar</a>
 				{% endif %}
