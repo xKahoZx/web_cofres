@@ -34,13 +34,13 @@ def edit_producto_view(request, id_producto):
 def edit_carousel_view(request, id_carousel):
 	carousel = Carousel.objects.get(id = id_carousel)
 	if request.method == "POST":
-		formulario = edit_carousel_form(request.POST, request.FILES, instance = carousel)
+		formulario = sabias_form(request.POST, request.FILES, instance = carousel)
 		if formulario.is_valid():
 			edit = formulario.save(commit = False)
 			edit.save()
 			return HttpResponseRedirect ("/sabias")
 	else:
-		formulario = edit_carousel_form(instance = carousel)
+		formulario = sabias_form(instance = carousel)
 	ctx = {'form':formulario}
 	return render_to_response('productos/edit_carousel.html', ctx , context_instance = RequestContext(request))
 
@@ -85,3 +85,16 @@ def desactivar_item_view(request, id_item):
 		item.Estado = False
 		item.save()
 	return HttpResponseRedirect ('/lista_slider/Activo')
+
+def add_sabias_view(request):
+
+	if request.method=="POST":
+		formulario = sabias_form(request.POST, request.FILES) 
+		if formulario.is_valid():
+			add = formulario.save(commit = False)
+			add.save()
+			return HttpResponseRedirect ('/sabias/')
+	else:
+		formulario = sabias_form()
+	ctx = {'form':formulario}
+	return render_to_response('productos/add_sabias.html',ctx,context_instance = RequestContext(request))
