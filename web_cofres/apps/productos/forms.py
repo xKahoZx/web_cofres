@@ -6,7 +6,7 @@ class add_product_form(forms.ModelForm):
 		model   = Producto
 		
 
-class edit_carousel_form(forms.ModelForm):
+class sabias_form(forms.ModelForm):
 	class Meta:
 		model   = Carousel
 		exclude = ('Estado')
